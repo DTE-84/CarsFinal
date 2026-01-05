@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Santiago - Shottenkirk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hero" class="logo"><img src="logo-shottenkirk-quincy-red-min.png"></a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#about">About</a></li>
+                <li><button id="contactBtn">Contact</button></li>
+            </ul>
+            <button id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Find Your Dream Car</h1>
+                <p>Premium quality cars with the best prices.</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Featured Cars</h2>
+            <div class="features-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" alt="Sports Car">
+                    <h3>Super Sport X</h3>
+                    <p>Experience the thrill of the road with the Super Sport X. Unmatched performance and style.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop" alt="Luxury Car">
+                    <h3>Luxury Sedan Z</h3>
+                    <p>Travel in comfort and class with the Luxury Sedan Z. The pinnacle of automotive elegance.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop" alt="Classic Car">
+                    <h3>Classic Cruiser</h3>
+                    <p>Own a piece of history with the timeless Classic Cruiser. A true collector's item.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inventory">
+            <h2>Inventory</h2>
+            <div class="filter-controls">
+                <input type="text" id="keywordSearch" placeholder="Search by make, model...">
+                <div class="price-filter">
+                    <label for="priceRange">Price up to: $<span id="priceValue">100000</span></label>
+                    <input type="range" id="priceRange" min="10000" max="100000" value="100000" step="1000">
+                </div>
+            </div>
+            <div id="inventoryGrid" class="features-grid">
+                <div class="card inventory-item" data-keywords="sport coupe red" data-price="75000">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop" alt="Red Coupe">
+                    <h3>Crimson Coupe</h3>
+                    <p class="price">$75,000</p>
+                </div>
+                <div class="card inventory-item" data-keywords="sedan luxury black" data-price="60000">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070&auto=format&fit=crop" alt="Black Sedan">
+                    <h3>Midnight Sedan</h3>
+                    <p class="price">$60,000</p>
+                </div>
+                <div class="card inventory-item" data-keywords="suv family white" data-price="45000">
+                    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1937&auto=format&fit=crop" alt="White SUV">
+                    <h3>Alpine SUV</h3>
+                    <p class="price">$45,000</p>
+                </div>
+                <div class="card inventory-item" data-keywords="classic vintage green" data-price="95000">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop" alt="Vintage Car">
+                    <h3>Emerald Classic</h3>
+                    <p class="price">$95,000</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to Gemini Cars, your trusted partner in the automotive world. Since our founding, we have been dedicated to providing our customers with the finest selection of new and pre-owned vehicles. Our mission is to make the car buying experience seamless, transparent, and enjoyable. We believe in quality, value, and building lasting relationships with our clients.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#about">About</a></li>
+                <li><button id="footerContactBtn">Contact</button></li>
+            </ul>
+            <p>&copy; Copyright Drew T Ernst 2026</p>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="contactInfo">Email or Phone:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
