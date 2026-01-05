@@ -13,8 +13,6 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-
-
 /* Header and Navigation */
 header {
   background-color: #fff;
@@ -33,27 +31,27 @@ nav {
   margin: 0 auto;
   margin-bottom: 2rem;
   position: relative; /* For hamburger menu positioning */
-   z-index: 1; /* Ensures nav content (links, logo) stays above the background image */
-   background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1; /* Ensures nav content (links, logo) stays above the background image */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-   nav::before {
-       content: "";
-       position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-     /* Replace with your desired image URL */
-     background-image: url("/carpark.8742e246.jpeg");
-background-size: cover; 
-background-position: center; /* Centers the image */
-background-repeat: no-repeat; /* Prevents image from repeating */
+  /* Replace with your desired image URL */
+  background-image: url("/carpark.8742e246.jpeg");
+  background-size: cover;
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image from repeating */
 
-     opacity: 0.3; /* Adjust this value (0.0 to 1.0) to control the fade level */
-      z-index: -1;
-    }
+  opacity: 0.3; /* Adjust this value (0.0 to 1.0) to control the fade level */
+  z-index: -1;
+}
 
 nav .logo {
   font-size: 1.5rem;
@@ -87,35 +85,34 @@ nav .logo {
 
 .nav-links a:hover {
   color: #f43303;
-  
 }
 
+/* Animated Underline for Links (appearing from left) */
+.animated-link {
+  position: relative; /* Needed for positioning the pseudo-element */
+  text-decoration: none; /* Removes the default underline */
+  color: #f43303; /* Inherits text color from parent, or set a specific color */
+  transition: color 0.3s ease; /* Smooth transition for text color changes on hover */ /* Add padding if you want space between text and underline */
+  padding-bottom: 5px;
+}
 
- /* Animated Underline for Links (appearing from left) */
- .animated-link {     
-    position: relative; /* Needed for positioning the pseudo-element */
-    text-decoration: none; /* Removes the default underline */     
-    color: #f43303; /* Inherits text color from parent, or set a specific color */    
-     transition: color 0.3s ease; /* Smooth transition for text color changes on hover */     /* Add padding if you want space between text and underline */    
-      padding-bottom: 5px; }
+.animated-link::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: currentColor; /* Makes the underline the same color as the text */
+  bottom: 0; /* Positions the underline at the bottom of the link */
+  left: 0;
 
- .animated-link::before {    
-     content: ''; /* Required for pseudo-elements */
-     position: absolute;
-     width: 100%;
-     height: 2px; /* Thickness of the underline */
-     background-color: currentColor; /* Makes the underline the same color as the text */
-     bottom: 0; /* Positions the underline at the bottom of the link */
-     left: 0;
+  transform-origin: left; /* Animation starts from the left side */
+  transform: scaleX(0); /* Initially hidden (scaled to 0 width) */
+  transition: transform 0.3s ease; /* Animation duration and timing function */
+}
 
-     transform-origin: left; /* Animation starts from the left side */
-     transform: scaleX(0); /* Initially hidden (scaled to 0 width) */
-     transition: transform 0.3s ease; /* Animation duration and timing function */
- }
-
- .animated-link:hover::before {
-     transform: scaleX(1); /* Expands to full width on hover */
-   }
+.animated-link:hover::before {
+  transform: scaleX(1); /* Expands to full width on hover */
+}
 
 #contactBtn {
   background-color: #f43303;
@@ -168,14 +165,12 @@ nav .logo {
   justify-content: center;
   text-align: center;
   color: white;
-   
 }
 
 .hero-content {
   background: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 10px;
-  
 }
 
 .hero-content h1 {
@@ -192,7 +187,7 @@ main section {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,7 +223,7 @@ main section h2 {
 }
 
 .card_feature {
- background-color: #fff;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px #f43303;
   overflow: hidden;
@@ -245,7 +240,7 @@ main section h2 {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.981);
 }
 
 .card img {
@@ -268,7 +263,7 @@ main section h2 {
 .card .price {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #007bff;
+  color: #f43303;
 }
 
 /* Inventory Section */
