@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* General Body Styles */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -9,6 +12,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+
 
 /* Header and Navigation */
 header {
@@ -26,8 +31,29 @@ nav {
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 2rem;
   position: relative; /* For hamburger menu positioning */
+   z-index: 1; /* Ensures nav content (links, logo) stays above the background image */
+   background-color: rgba(255, 255, 255, 0.8);
 }
+
+   nav::before {
+       content: "";
+       position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+
+     /* Replace with your desired image URL */
+     background-image: url("/carpark.8742e246.jpeg");
+background-size: cover; 
+background-position: center; /* Centers the image */
+background-repeat: no-repeat; /* Prevents image from repeating */
+
+     opacity: 0.3; /* Adjust this value (0.0 to 1.0) to control the fade level */
+      z-index: -1;
+    }
 
 nav .logo {
   font-size: 1.5rem;
@@ -61,7 +87,35 @@ nav .logo {
 
 .nav-links a:hover {
   color: #f43303;
+  
 }
+
+
+ /* Animated Underline for Links (appearing from left) */
+ .animated-link {     
+    position: relative; /* Needed for positioning the pseudo-element */
+    text-decoration: none; /* Removes the default underline */     
+    color: #f43303; /* Inherits text color from parent, or set a specific color */    
+     transition: color 0.3s ease; /* Smooth transition for text color changes on hover */     /* Add padding if you want space between text and underline */    
+      padding-bottom: 5px; }
+
+ .animated-link::before {    
+     content: ''; /* Required for pseudo-elements */
+     position: absolute;
+     width: 100%;
+     height: 2px; /* Thickness of the underline */
+     background-color: currentColor; /* Makes the underline the same color as the text */
+     bottom: 0; /* Positions the underline at the bottom of the link */
+     left: 0;
+
+     transform-origin: left; /* Animation starts from the left side */
+     transform: scaleX(0); /* Initially hidden (scaled to 0 width) */
+     transition: transform 0.3s ease; /* Animation duration and timing function */
+ }
+
+ .animated-link:hover::before {
+     transform: scaleX(1); /* Expands to full width on hover */
+   }
 
 #contactBtn {
   background-color: #f43303;
@@ -114,12 +168,14 @@ nav .logo {
   justify-content: center;
   text-align: center;
   color: white;
+   
 }
 
 .hero-content {
   background: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   border-radius: 10px;
+  
 }
 
 .hero-content h1 {
@@ -136,6 +192,10 @@ main section {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main section:nth-of-type(even) {
@@ -266,7 +326,7 @@ footer {
 
 .footer-links a:hover,
 .footer-links button:hover {
-  color: #007bff;
+  color: #f43303;
 }
 
 /* --- Responsive Design --- */
@@ -385,7 +445,7 @@ footer {
 }
 
 #contactForm button {
-  background-color: #28a745;
+  background-color: #f43303;
   color: white;
   padding: 0.8rem;
   border: none;
@@ -396,7 +456,9 @@ footer {
 }
 
 #contactForm button:hover {
-  background-color: #218838;
+  background-color: #ffffff;
+  color: #f43303;
+  border: 2px solid #f43303;
 }
 
 /* Keyframe animations for modal */
