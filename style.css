@@ -224,6 +224,7 @@ main section h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .card_feature {
@@ -234,6 +235,12 @@ main section h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.card_feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px #f43303;
 }
 
 .card:hover {
